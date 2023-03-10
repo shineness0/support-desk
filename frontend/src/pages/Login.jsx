@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
-// import { login } from '../features/auth/authSlice'
+import { login } from '../features/auth/authSlice'
 // import Spinner from '../components/Spinner'
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
 
   const { email, password } = formData
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   // const navigate = useNavigate()
 
   // const { isLoading } = useSelector((state) => state.auth)
@@ -40,7 +40,7 @@ function Login() {
       password,
     }
 
-    // dispatch(login(userData))
+    dispatch(login(userData))
     //   .unwrap()
     //   .then((user) => {
         // NOTE: by unwrapping the AsyncThunkAction we can navigate the user after

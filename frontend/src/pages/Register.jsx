@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { register } from '../features/auth/authSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { register } from '../features/auth/authSlice'
 // import Spinner from '../components/Spinner'
 
 function Register() {
@@ -16,10 +16,10 @@ function Register() {
 
   const { name, email, password, password2 } = formData
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   // const navigate = useNavigate()
 
-  // const { isLoading } = useSelector((state) => state.auth)
+  const { user, isLoading, isSuccess, message } = useSelector((state) => state.auth)
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -46,7 +46,7 @@ function Register() {
         password,
       }
 
-      // dispatch(register(userData))
+      dispatch(register(userData))
       //   .unwrap()
       //   .then((user) => {
           // NOTE: by unwrapping the AsyncThunkAction we can navigate the user after
