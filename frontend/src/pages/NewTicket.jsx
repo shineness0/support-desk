@@ -32,7 +32,6 @@ function NewTicket() {
           <div className="form-group">
             <label htmlFor="product">Product</label>
             <select name="product" id="product" value={product} onChange={(e) => setProduct(e.target.value)}>
-              <option value="" selected>Select a product</option>
               <option value="iPhone">iPhone</option>
               <option value="Macbook Pro">Macbook Pro</option>
               <option value="iMac">iMac</option>
