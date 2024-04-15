@@ -6,7 +6,7 @@ const initialState = {
   ticket: {},
   isError: false,
   isSuccess: false,
-  isLoading: true,
+  isLoading: false,
   message: ''
 }
 
